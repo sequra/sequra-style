@@ -5,19 +5,17 @@ Inspired by Percy Blog [post](https://blog.percy.io/share-rubocop-rules-across-a
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's Gemfile (we need to point to GitHub since it's not published):
 
 ```ruby
-gem "sequra-style"
+gem "sequra-style", git: "https://github.com/sequra/sequra-style", require: false
 ```
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install sequra-style
+```shell
+$ bundle install
+```
 
 ## Usage
 
