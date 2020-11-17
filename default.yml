@@ -11,6 +11,7 @@ AllCops:
     - "**/vendor/**/*"
     - "**/node_modules/**/*"
     - "local_files/**/*"
+  NewCops: disable
 
 Performance:
   Enabled: true
@@ -18,9 +19,6 @@ Performance:
     - "**/spec/**/*"
 
 Rails:
-  Enabled: true
-
-RSpec:
   Enabled: true
 
 # Prefer assert_not over assert !
@@ -229,4 +227,7 @@ RSpec/ExampleLength:
   Max: 16
 
 RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
   Enabled: false
