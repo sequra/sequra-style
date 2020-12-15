@@ -205,6 +205,10 @@ Style/ColonMethodCall:
 Style/TrivialAccessors:
   Enabled: true
 
+# Use guard clauses when possible
+Style/GuardClause:
+  Enabled: true
+
 Performance/FlatMap:
   Enabled: true
 
