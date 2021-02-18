@@ -26,6 +26,11 @@ Rails/AssertNot:
   Include:
     - "**/spec/**/*"
 
+# Don't enforce tag over content tag until this issue is properly handled:
+# https://github.com/rubocop-hq/rubocop-rails/issues/260
+Rails/ContentTag:
+  Enabled: false
+
 Rails/FilePath:
   EnforcedStyle: "arguments"
 
