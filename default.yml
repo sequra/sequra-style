@@ -53,6 +53,9 @@ Style/DateTime:
 Layout/CaseIndentation:
   Enabled: true
 
+Layout/ClassStructure:
+  Enabled: true
+
 # Align comments with method definitions.
 Layout/CommentIndentation:
   Enabled: true
