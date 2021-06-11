@@ -211,6 +211,9 @@ Layout/TrailingEmptyLines:
 Layout/TrailingWhitespace:
   Enabled: true
 
+Lint/Debugger:
+  Enabled: true
+
 # Use quotes for string literals when they are enough.
 Style/RedundantPercentQ:
   Enabled: true
