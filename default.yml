@@ -49,6 +49,15 @@ Style/AndOr:
 Style/DateTime:
   Enabled: true
 
+Style/MultilineIfModifier:
+  Enabled: true
+
+Style/NestedModifier:
+  Enabled: true
+
+Style/SoleNestedConditional:
+  Enabled: true
+
 # Align `when` with `case`.
 Layout/CaseIndentation:
   Enabled: true
