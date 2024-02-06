@@ -127,6 +127,10 @@ Layout/EmptyLinesAroundMethodBody:
 Layout/EmptyLinesAroundModuleBody:
   Enabled: true
 
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+  Severity: info
+
 Layout/FirstArgumentIndentation:
   Enabled: true
 
