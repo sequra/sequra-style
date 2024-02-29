@@ -19,7 +19,7 @@ _Provide a description of the overall goal (you can usually use the one from the
 
 ### Is this a rectricting or expanding change?
 
-_[RESTRICTING|EXPANDING] Restricting changes are those that limit the current style, while expanding changes are those that add new rules or relax the current ones._
+_[RESTRICTING|EXPANDING] Restricting changes are those that limit the current style or add new rules, while expanding changes are those that remove rules or relax the current ones._
 
 ### References
 * **Issue:** _jira issue goes here, if suggesting a new feature or change, please discuss it in an issue first_
