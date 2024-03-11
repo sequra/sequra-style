@@ -19,7 +19,9 @@ _Provide a description of the overall goal (you can usually use the one from the
 
 ### Is this a rectricting or expanding change?
 
-_[RESTRICTING|EXPANDING] Restricting changes are those that limit the current style or add new rules, while expanding changes are those that remove rules or relax the current ones._
+**_[RESTRICTING|EXPANDING] change**
+
+_Restricting changes are those that limit the current style or add new rules, while expanding changes are those that remove rules or relax the current ones._
 
 ### References
 * **Issue:** _jira issue goes here, if suggesting a new feature or change, please discuss it in an issue first_
@@ -43,12 +45,3 @@ _If you find any, please describe all the special conditions._
 _Automatic tests? Manual tests?_
 
 _If it cannot be tested explain why._
-
-_Add use cases if specs are incomplete or missing._
-
-### How is it going to be deployed?
-
-_If it does not require anything special, just write "Standard deployment". Otherwise, put the required steps._
-
-- [ ] _Step 1_
-- [ ] _Step 2_

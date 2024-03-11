@@ -1,0 +1,34 @@
+name: Create gem release pull request
+on:
+  push:
+    branches:
+      - 'master'
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: GoogleCloudPlatform/release-please-action@v3
+        id: release
+        with:
+          release-type: ruby
+          package-name: sequra-style
+          bump-minor-pre-major: true
+          version-file: 'lib/sequra/sequra-style/version.rb'
+      - uses: actions/checkout@v2
+        if: ${{ steps.release.outputs.release_created }}
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Publish gem to Github repository packages
+        run: |
+          mkdir -p $HOME/.gem
+          touch $HOME/.gem/credentials
+          chmod 0600 $HOME/.gem/credentials
+          printf -- "---\n:github: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
+          gem build *.gemspec
+          gem push --KEY github --host https://rubygems.pkg.github.com/${OWNER} *.gem
+        env:
+          GEM_HOST_API_KEY: "Bearer ${{secrets.GITHUB_TOKEN}}"
+          OWNER: ${{ github.repository_owner }}
+        if: ${{ steps.release.outputs.release_created }}
