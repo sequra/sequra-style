@@ -1,6 +1,6 @@
 # sequra-style
 
-SeQura code style guides and shared configuration.
+SeQura code style guide and shared configuration.
 
 ## Installation
 
