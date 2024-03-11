@@ -1,7 +1,6 @@
 # sequra-style
 
 SeQura code style guides and shared configuration.
-Inspired by Percy Blog [post](https://blog.percy.io/share-rubocop-rules-across-all-of-your-repos-f3281fbd71f8)
 
 ## Installation
 
