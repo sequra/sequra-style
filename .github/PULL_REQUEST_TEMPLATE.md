@@ -17,7 +17,7 @@ YOU CAN REMOVE THE PARTS OF THE TEMPLATE THAT DO NOT APPLY TO YOUR PULL REQUEST
 
 _Provide a description of the overall goal (you can usually use the one from the issue)_
 
-### Is this a rectricting or expanding change?
+### Is this a restricting or expanding change?
 
 **_[RESTRICTING|EXPANDING] change**
 
