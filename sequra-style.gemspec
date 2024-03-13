@@ -5,8 +5,8 @@ require "sequra/style/version"
 Gem::Specification.new do |spec|
   spec.name          = "sequra-style"
   spec.version       = Sequra::Style::VERSION
-  spec.authors       = ["Sequra"]
-  spec.email         = ["tech@sequra.es"]
+  spec.authors       = ["Sequra engineering"]
+  spec.email         = ["dev@sequra.es"]
 
   spec.summary       = "Sequra code style guides and shared config"
   spec.homepage      = "https://github.com/sequra/sequra-style"
