@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name          = "sequra-style"
   spec.version       = Sequra::Style::VERSION
   spec.authors       = ["Sequra engineering"]
-  spec.email         = ["dev@sequra.es"]
+  spec.email         = ["rubygems@sequra.es"]
 
   spec.summary       = "Sequra code style guides and shared config"
   spec.homepage      = "https://github.com/sequra/sequra-style"
