@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/sequra/sequra-style/compare/v1.0.0...v1.0.1) (2024-03-14)
+
+
+### Bug Fixes
+
+* Allow pushing gem to rubygems.pkg.github.com ([#20](https://github.com/sequra/sequra-style/issues/20)) ([df7191f](https://github.com/sequra/sequra-style/commit/df7191f7f212d416a4531d358b27769d45458cda))
+
 ## 1.0.0 (2024-03-12)
 
 
