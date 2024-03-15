@@ -6,7 +6,7 @@ Here are some friendly reminders before submitting your pull request:
 
 - There should be a goal describing the motivation for this change.
 - Consider if this change is restricting current style or expanding it.
-- Changes should be discussed with the team before being accepted
+- Changes should be discussed with the team before being accepted.
 - Restricting changes should have [severity level `info`](https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Severity) to allow time for adoption before making them mandatory.
 
 YOU CAN REMOVE THE PARTS OF THE TEMPLATE THAT DO NOT APPLY TO YOUR PULL REQUEST
