@@ -6,7 +6,8 @@ Here are some friendly reminders before submitting your pull request:
 
 - There should be a goal describing the motivation for this change.
 - Consider if this change is restricting current style or expanding it.
-- Restricting changes should be discussed with the team before being accepted, and their [severity level should be set to `info`](https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Severity) to allow time for adoption before making them mandatory.
+- Changes should be discussed with the team before being accepted
+- Restricting changes should have [severity level `info`](https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Severity) to allow time for adoption before making them mandatory.
 
 YOU CAN REMOVE THE PARTS OF THE TEMPLATE THAT DO NOT APPLY TO YOUR PULL REQUEST
 
@@ -24,7 +25,9 @@ _Provide a description of the overall goal._
 
 _Restricting changes are those that limit the current style or add new rules, while expanding changes are those that remove rules or relax the current ones._
 
-_Rectricting changes should be discussed with the team before being accepted, and their [severity level set to `info`](https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Severity) to allow time for adoption before making them mandatory._
+_Changes should be discussed with the team before being accepted._
+
+_Restricting changes should have [severity level `info`](https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Severity) to allow time for adoption before making them mandatory._
 
 ### References
 * **Related pull-requests:** _list of related pull-requests (comma-separated): #1, #2_
