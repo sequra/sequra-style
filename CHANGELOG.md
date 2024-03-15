@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/sequra/sequra-style/compare/v1.0.1...v1.0.2) (2024-03-15)
+
+
+### Bug Fixes
+
+* add note about severity level for restricting changes ([#23](https://github.com/sequra/sequra-style/issues/23)) ([9978874](https://github.com/sequra/sequra-style/commit/99788746845c79e9e7239edd49df1286a9e38a5f))
+
 ## [1.0.1](https://github.com/sequra/sequra-style/compare/v1.0.0...v1.0.1) (2024-03-14)
 
 
