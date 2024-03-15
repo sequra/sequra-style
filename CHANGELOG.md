@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/sequra/sequra-style/compare/v1.0.2...v1.0.3) (2024-03-15)
+
+
+### Bug Fixes
+
+* Fix release-please version path ([#25](https://github.com/sequra/sequra-style/issues/25)) ([154fa02](https://github.com/sequra/sequra-style/commit/154fa02e0f9cbeaa290f0c677b2cf97fcbb908cb))
+
 ## [1.0.2](https://github.com/sequra/sequra-style/compare/v1.0.1...v1.0.2) (2024-03-15)
 
 
