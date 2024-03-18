@@ -61,6 +61,7 @@ Style/SoleNestedConditional:
 # https://docs.rubocop.org/rubocop/cops_layout.html#layoutaccessmodifierindentation
 Layout/AccessModifierIndentation:
   EnforcedStyle: outdent
+  Severity: info
 
 # Align `when` with `case`.
 Layout/CaseIndentation:
