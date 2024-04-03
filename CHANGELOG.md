@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/sequra/sequra-style/compare/v1.0.3...v1.1.0) (2024-04-03)
+
+
+### Features
+
+* add Layout/AccessModifierIndentation ([#22](https://github.com/sequra/sequra-style/issues/22)) ([3fb4ece](https://github.com/sequra/sequra-style/commit/3fb4ecef5ee89e78592f4658b904c84ff98df953))
+
 ## [1.0.3](https://github.com/sequra/sequra-style/compare/v1.0.2...v1.0.3) (2024-03-15)
 
 
