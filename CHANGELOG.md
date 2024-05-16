@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/sequra/sequra-style/compare/v1.1.0...v1.2.0) (2024-05-16)
+
+
+### Features
+
+* Add RSpec/ContextMethod rule only as warning ([#29](https://github.com/sequra/sequra-style/issues/29)) ([9ae2e5b](https://github.com/sequra/sequra-style/commit/9ae2e5bb007d5175986a7436e358d915e12c0c90))
+
 ## [1.1.0](https://github.com/sequra/sequra-style/compare/v1.0.3...v1.1.0) (2024-04-03)
 
 
