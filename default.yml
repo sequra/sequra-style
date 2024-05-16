@@ -282,6 +282,9 @@ Performance/RegexpMatch:
 RSpec/ContextWording:
   Enabled: false
 
+RSpec/ContextMethod:
+  Severity: info
+
 RSpec/ExampleLength:
   Max: 16
 
