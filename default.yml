@@ -34,6 +34,11 @@ Rails/ContentTag:
 Rails/FilePath:
   EnforcedStyle: "arguments"
 
+# Exclude rswag specs from this cop, as it missinterprets test tags
+Rails/HttpPositionalArguments:
+  Exclude:
+    - '**/spec/api/**/*'
+
 # Prefer assert_not_x over refute_x
 Rails/RefuteMethods:
   Include:
