@@ -3,6 +3,7 @@ PATH
   specs:
     sequra-style (1.2.0)
       rubocop (~> 1)
+      rubocop-obsession (~> 0.1.11)
       rubocop-performance (~> 1)
       rubocop-rails (~> 2)
       rubocop-rspec (~> 2)
@@ -43,6 +44,9 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.36.1)
       parser (>= 3.3.1.0)
+    rubocop-obsession (0.1.11)
+      activesupport
+      rubocop (~> 1.41)
     rubocop-performance (1.15.1)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)

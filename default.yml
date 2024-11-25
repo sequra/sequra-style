@@ -2,6 +2,7 @@ require:
   - rubocop-performance
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-obsession
 
 AllCops:
   # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
