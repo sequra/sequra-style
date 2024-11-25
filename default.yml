@@ -265,6 +265,10 @@ Style/TrivialAccessors:
 Style/GuardClause:
   Enabled: true
 
+Obsession/MethodOrder:
+  Enabled: true
+  Severity: info
+
 Performance/FlatMap:
   Enabled: true
 
