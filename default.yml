@@ -267,6 +267,7 @@ Style/GuardClause:
 
 Obsession/MethodOrder:
   Enabled: true
+  EnforcedStyle: step_down
   Severity: info
 
 Performance/FlatMap:
