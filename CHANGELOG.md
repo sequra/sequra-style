@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/sequra/sequra-style/compare/v1.3.0...v1.3.1) (2025-03-06)
+
+
+### Bug Fixes
+
+* use clean code style method ordering ([#34](https://github.com/sequra/sequra-style/issues/34)) ([c9d33f4](https://github.com/sequra/sequra-style/commit/c9d33f4dad18ac168bf86071a6b8e75c423245f0))
+
 ## [1.3.0](https://github.com/sequra/sequra-style/compare/v1.2.0...v1.3.0) (2024-12-02)
 
 
