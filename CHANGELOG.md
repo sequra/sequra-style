@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/sequra/sequra-style/compare/v1.3.1...v1.3.2) (2025-03-24)
+
+
+### Bug Fixes
+
+* bump rubocop obsession ([#36](https://github.com/sequra/sequra-style/issues/36)) ([9ff982b](https://github.com/sequra/sequra-style/commit/9ff982bdc1a6ae72e06c093f31b54da4981c7bc8))
+
 ## [1.3.1](https://github.com/sequra/sequra-style/compare/v1.3.0...v1.3.1) (2025-03-06)
 
 

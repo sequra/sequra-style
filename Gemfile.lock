@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sequra-style (1.3.1)
+    sequra-style (1.3.2)
       rubocop (~> 1)
       rubocop-obsession (~> 0.1.11)
       rubocop-performance (~> 1)
