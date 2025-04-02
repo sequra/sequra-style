@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/sequra/sequra-style/compare/v1.3.2...v1.3.3) (2025-04-02)
+
+
+### Bug Fixes
+
+* require to plugins ([#38](https://github.com/sequra/sequra-style/issues/38)) ([11b3cb9](https://github.com/sequra/sequra-style/commit/11b3cb982329eec4ed295e59db258c21ff8296a5))
+
 ## [1.3.2](https://github.com/sequra/sequra-style/compare/v1.3.1...v1.3.2) (2025-03-24)
 
 
