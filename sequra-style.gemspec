@@ -25,7 +25,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rubocop-performance", "~> 1.25"
   spec.add_dependency "rubocop-rails", "~> 2.31"
   spec.add_dependency "rubocop-rspec", "~> 3.5"
-  spec.add_dependency "rubocop-obsession", "~> 0.2"
 
   spec.add_development_dependency "bundler", "~> 2.1.4"
   spec.add_development_dependency "rake", "~> 13.0.1"
