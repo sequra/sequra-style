@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/sequra/sequra-style/compare/v1.3.3...v1.4.0) (2025-07-30)
+
+
+### Features
+
+* Remove Obsession/MethodOrder cop ([#40](https://github.com/sequra/sequra-style/issues/40)) ([48def28](https://github.com/sequra/sequra-style/commit/48def28a0c82959baadcf7195bd011f7b5a701a5))
+
 ## [1.3.3](https://github.com/sequra/sequra-style/compare/v1.3.2...v1.3.3) (2025-04-02)
 
 
