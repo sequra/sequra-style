@@ -132,6 +132,17 @@ Layout/EmptyLinesAroundMethodBody:
 Layout/EmptyLinesAroundModuleBody:
   Enabled: true
 
+# Align block 'end's with the start of their block 
+Layout/BlockAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: start_of_line
+  Severity: info
+
+# Enforce empty line between method definitions 
+Layout/EmptyLineBetweenDefs:
+  Enabled: true
+  Severity: info
+
 Layout/FirstArgumentIndentation:
   Enabled: true
 
@@ -293,3 +304,8 @@ RSpec/MultipleExpectations:
 
 RSpec/NestedGroups:
   Enabled: false
+
+# Enforce empty line between 'it' blocks (allows oneliners)
+RSpec/EmptyLineAfterExample:
+  Enabled: true
+  Severity: info
