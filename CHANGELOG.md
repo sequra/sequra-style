@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/sequra/sequra-style/compare/v1.3.3...v1.4.0) (2025-10-22)
+
+
+### Features
+
+* improve newlines and indentation rules ([#42](https://github.com/sequra/sequra-style/issues/42)) ([80c360d](https://github.com/sequra/sequra-style/commit/80c360d66ab8768267a8d66707c54a83c4bb70bc))
+* Remove Obsession/MethodOrder cop ([#40](https://github.com/sequra/sequra-style/issues/40)) ([48def28](https://github.com/sequra/sequra-style/commit/48def28a0c82959baadcf7195bd011f7b5a701a5))
+
 ## [1.3.3](https://github.com/sequra/sequra-style/compare/v1.3.2...v1.3.3) (2025-04-02)
 
 
