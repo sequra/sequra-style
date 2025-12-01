@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/sequra/sequra-style/compare/v1.4.0...v1.5.0) (2025-12-01)
+
+
+### Features
+
+* disable example length rule ([#43](https://github.com/sequra/sequra-style/issues/43)) ([be34b58](https://github.com/sequra/sequra-style/commit/be34b58f85e9fa0602ccb1baa6228927d6144a5b))
+
 ## [1.4.0](https://github.com/sequra/sequra-style/compare/v1.3.3...v1.4.0) (2025-10-22)
 
 
