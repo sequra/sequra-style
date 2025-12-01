@@ -1,9 +1,7 @@
-# WARNING: DO NOT LIST PLUGINS HERE!
-# `inherit_gem` doesn't support plugins yet. Plugins must be listed in the .rubocop.yml file of each project for now
-# require:
-#   - rubocop-performance
-#   - rubocop-rails
-#   - rubocop-rspec
+plugins:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
   # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
@@ -299,7 +297,7 @@ RSpec/ContextMethod:
   Severity: info
 
 RSpec/ExampleLength:
-  Enabled: false
+  Max: 999
 
 RSpec/MultipleExpectations:
   Enabled: false
