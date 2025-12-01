@@ -297,7 +297,10 @@ RSpec/ContextMethod:
   Severity: info
 
 RSpec/ExampleLength:
-  Max: 16
+  # WORKAROUND: `Enabled: false` is ignored due to a loading order bug with
+  # `inherit_gem` and `rubocop-rspec` plugins. We set a high Max to silence it
+  # while keeping the plugin definition self-contained in this gem.
+  Max: 999
 
 RSpec/MultipleExpectations:
   Enabled: false
