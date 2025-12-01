@@ -297,7 +297,7 @@ RSpec/ContextMethod:
   Severity: info
 
 RSpec/ExampleLength:
-  Max: 16
+  Enabled: false
 
 RSpec/MultipleExpectations:
   Enabled: false
