@@ -13,7 +13,9 @@ AllCops:
     - "**/node_modules/**/*"
     - "local_files/**/*"
 
-    # Exclude migration files created before today:
+    # Exclude migration files created before December 2025:
+    # NOTE: Do not keep adding new exlcusions here. New migrations after this are expected to comply with the current style
+    # guide.
     - db/*/2011*.rb
     - db/*/2012*.rb
     - db/*/2013*.rb
