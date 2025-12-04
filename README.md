@@ -25,5 +25,5 @@ inherit_gem:
   sequra-style:
     - default.yml
 
-# Add any other particular settings for cops that are particular to your project here
+# Add any project-specific cop settings here
 ```
