@@ -47,8 +47,6 @@ AllCops:
 
 Performance:
   Enabled: true
-  Exclude:
-    - "**/spec/**/*"
 
 Rails:
   Enabled: true
