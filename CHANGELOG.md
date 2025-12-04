@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/sequra/sequra-style/compare/v1.5.0...v1.6.0) (2025-12-04)
+
+
+### Features
+
+* Relax some rules ([#45](https://github.com/sequra/sequra-style/issues/45)) ([bf97bee](https://github.com/sequra/sequra-style/commit/bf97bee12ff7ae202e16e31181a807d6415fa642))
+
 ## [1.5.0](https://github.com/sequra/sequra-style/compare/v1.4.0...v1.5.0) (2025-12-01)
 
 
