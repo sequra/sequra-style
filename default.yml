@@ -48,6 +48,9 @@ AllCops:
 Performance:
   Enabled: true
 
+Performance/UnfreezeString:
+  Enabled: false
+
 Rails:
   Enabled: true
 
