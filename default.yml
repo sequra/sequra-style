@@ -13,7 +13,7 @@ AllCops:
     - "**/node_modules/**/*"
     - "local_files/**/*"
 
-    # Exclude migration files up-to-date:
+    # Exclude migration files created before today:
     - db/*/2011*.rb
     - db/*/2012*.rb
     - db/*/2013*.rb
