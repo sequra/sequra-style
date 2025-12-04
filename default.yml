@@ -7,16 +7,46 @@ AllCops:
   # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
   # to ignore them, so only the ones explicitly set in this file are enabled.
   DisabledByDefault: true
+  NewCops: disable
   Exclude:
     - "**/vendor/**/*"
     - "**/node_modules/**/*"
     - "local_files/**/*"
-  NewCops: disable
+
+    # Exclude migration files created before December 2025:
+    # NOTE: Do not keep adding new exlcusions here. New migrations after this are expected to comply with the current style
+    # guide.
+    - db/*/2011*.rb
+    - db/*/2012*.rb
+    - db/*/2013*.rb
+    - db/*/2014*.rb
+    - db/*/2015*.rb
+    - db/*/2016*.rb
+    - db/*/2017*.rb
+    - db/*/2018*.rb
+    - db/*/2019*.rb
+    - db/*/2020*.rb
+    - db/*/2021*.rb
+    - db/*/2022*.rb
+    - db/*/2023*.rb
+    - db/*/2024*.rb
+    - db/*/202501*.rb
+    - db/*/202502*.rb
+    - db/*/202503*.rb
+    - db/*/202504*.rb
+    - db/*/202505*.rb
+    - db/*/202506*.rb
+    - db/*/202507*.rb
+    - db/*/202508*.rb
+    - db/*/202509*.rb
+    - db/*/202510*.rb
+    - db/*/202511*.rb
+    - db/*/20251201*.rb
+    - db/*/20251202*.rb
+    - db/*/20251203*.rb
 
 Performance:
   Enabled: true
-  Exclude:
-    - "**/spec/**/*"
 
 Rails:
   Enabled: true
@@ -37,6 +67,11 @@ Rails/FilePath:
 # Prefer assert_not_x over refute_x
 Rails/RefuteMethods:
   Include:
+    - "**/spec/**/*"
+
+Rails/SkipsModelValidations:
+  Enabled: true
+  Exclude:
     - "**/spec/**/*"
 
 Rails/TimeZone:
@@ -132,16 +167,15 @@ Layout/EmptyLinesAroundMethodBody:
 Layout/EmptyLinesAroundModuleBody:
   Enabled: true
 
-# Align block 'end's with the start of their block 
+# Align block 'end's either with the start of the block or with the first
+# character of the line containing the start of the block
 Layout/BlockAlignment:
   Enabled: true
-  EnforcedStyleAlignWith: start_of_line
-  Severity: info
+  EnforcedStyleAlignWith: either
 
 # Enforce empty line between method definitions 
 Layout/EmptyLineBetweenDefs:
   Enabled: true
-  Severity: info
 
 Layout/FirstArgumentIndentation:
   Enabled: true
@@ -237,6 +271,10 @@ Layout/TrailingWhitespace:
   Enabled: true
 
 Lint/Debugger:
+  Enabled: true
+
+# Detect redundant disabling of cops and automatically remove them with --autocorrect
+Lint/RedundantCopDisableDirective:
   Enabled: true
 
 # Use quotes for string literals when they are enough.
