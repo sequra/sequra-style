@@ -4,7 +4,7 @@ SeQura code style guide and shared configuration.
 
 ## Installation
 
-Add this line to your application's Gemfile (the gem automatically released to [rubybems.org](https://rubygems.org/gems/sequra-style)):
+Add this line to your application's Gemfile (the gem is automatically released to [rubygems.org](https://rubygems.org/gems/sequra-style)):
 
 ```ruby
 gem "sequra-style", require: false
