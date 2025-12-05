@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/sequra/sequra-style/compare/v1.6.0...v1.7.0) (2025-12-05)
+
+
+### Features
+
+* Exclue db/schema.rb in all cops ([#48](https://github.com/sequra/sequra-style/issues/48)) ([fd170fd](https://github.com/sequra/sequra-style/commit/fd170fd504112d063b1431a17f43cab62af3fcb4))
+
 ## [1.6.0](https://github.com/sequra/sequra-style/compare/v1.5.0...v1.6.0) (2025-12-04)
 
 
