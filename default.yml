@@ -12,6 +12,7 @@ AllCops:
     - "**/vendor/**/*"
     - "**/node_modules/**/*"
     - "local_files/**/*"
+    - db/schema.rb
 
     # Exclude migration files created before December 2025:
     # NOTE: Do not keep adding new exlcusions here. New migrations after this are expected to comply with the current style
