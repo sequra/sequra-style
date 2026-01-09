@@ -271,13 +271,13 @@ Layout/SpaceBeforeFirstArg:
 # Use `foo { bar }` not `foo {bar}`
 # https://rubystyle.guide/#spaces-braces
 Layout/SpaceInsideBlockBraces:
-  EnforcedStyle: spaces
+  EnforcedStyle: space
   Enabled: true
 
 # Use `{ a: 1 }` not `{a:1}`
 # https://rubystyle.guide/#spaces-braces
 Layout/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: spaces
+  EnforcedStyle: space
   Enabled: true
 
 # No space inside parentheses
