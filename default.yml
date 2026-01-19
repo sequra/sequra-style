@@ -628,6 +628,39 @@ Style/MethodDefParentheses:
 # https://rubystyle.guide/#method-call-parentheses
 Style/MethodCallWithArgsParentheses:
   Enabled: true
+  AllowedMethods:
+    - allow
+    - allow_any_instance_of
+    - authorize
+    - be
+    - be_a
+    - change
+    - contain_exactly
+    - describe
+    - description
+    - eq
+    - expect
+    - expect_any_instance_of
+    - have_button
+    - have_content
+    - have_field
+    - have_link
+    - have_selector
+    - have_text
+    - head
+    - include
+    - info
+    - log
+    - match
+    - match_array
+    - not_to
+    - puts
+    - raise
+    - raise_error
+    - redirect_to
+    - render
+    - to
+    - travel
 
 # Omit parentheses for method calls without arguments
 Style/MethodCallWithoutArgsParentheses:
