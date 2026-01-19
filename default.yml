@@ -623,12 +623,13 @@ Style/MethodCallWithArgsParentheses:
     - be
     - be_a
     - change
+    - confirmed_order
     - contain_exactly
     - describe
-    - description
     - eq
     - expect
     - expect_any_instance_of
+    - fail
     - have_button
     - have_content
     - have_field
@@ -637,18 +638,27 @@ Style/MethodCallWithArgsParentheses:
     - have_text
     - head
     - include
+    - include?
     - info
     - log
     - match
     - match_array
+    - move_down
     - not_to
+    - on
+    - p
+    - print
     - puts
     - raise
     - raise_error
     - redirect_to
     - render
+    - send_data
+    - snapshot!
+    - step_to
     - to
     - travel
+    - use
 
 # Omit parentheses for method calls without arguments
 Style/MethodCallWithoutArgsParentheses:
