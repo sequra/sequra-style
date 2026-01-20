@@ -12,7 +12,7 @@ AllCops:
     - "**/vendor/**/*"
     - "**/node_modules/**/*"
     - "local_files/**/*"
-    - db/schema.rb
+    - db/*.rb
 
     # Exclude migration files created before December 2025:
     # NOTE: Do not keep adding new exlcusions here. New migrations after this are expected to comply with the current style
@@ -31,20 +31,8 @@ AllCops:
     - db/*/2022*.rb
     - db/*/2023*.rb
     - db/*/2024*.rb
-    - db/*/202501*.rb
-    - db/*/202502*.rb
-    - db/*/202503*.rb
-    - db/*/202504*.rb
-    - db/*/202505*.rb
-    - db/*/202506*.rb
-    - db/*/202507*.rb
-    - db/*/202508*.rb
-    - db/*/202509*.rb
-    - db/*/202510*.rb
-    - db/*/202511*.rb
-    - db/*/20251201*.rb
-    - db/*/20251202*.rb
-    - db/*/20251203*.rb
+    - db/*/2025*.rb
+    - db/*/202601*.rb
 
 Performance:
   Enabled: true
@@ -75,34 +63,34 @@ Rails/SkipsModelValidations:
   Exclude:
     - "**/spec/**/*"
 
+# Prefer Time over DateTime for timezone handling
 Rails/TimeZone:
   Enabled: true
 
-# Prefer &&/|| over and/or.
-Style/AndOr:
-  Enabled: true
-
-Style/DateTime:
-  Enabled: true
-
-Style/MultilineIfModifier:
-  Enabled: true
-
-Style/NestedModifier:
-  Enabled: true
-
-Style/SoleNestedConditional:
-  Enabled: true
-
-# https://docs.rubocop.org/rubocop/cops_layout.html#layoutaccessmodifierindentation
+# Indent access modifiers like private/protected
+# https://rubystyle.guide/#indent-public-private-protected
 Layout/AccessModifierIndentation:
-  EnforcedStyle: outdent
-  Severity: info
+  EnforcedStyle: indent
+  Enabled: true
 
-# Align `when` with `case`.
+# Align multi-line array elements
+# https://rubystyle.guide/#align-multiline-arrays
+Layout/ArrayAlignment:
+  Enabled: true
+
+# Align block end with start of block
+# NOT RELATED TO RUBY STYLE GUIDE
+Layout/BlockAlignment:
+  EnforcedStyleAlignWith: start_of_block
+  Enabled: true
+
+# Align `when` with `case`
+# https://rubystyle.guide/#indent-when-to-case
 Layout/CaseIndentation:
   Enabled: true
 
+# Use consistent class structure
+# https://rubystyle.guide/#consistent-classes
 Layout/ClassStructure:
   Enabled: true
   ExpectedOrder:
@@ -136,203 +124,316 @@ Layout/ClassStructure:
        - prepend
        - extend
 
-# Align comments with method definitions.
+# Align comments with method definitions
 Layout/CommentIndentation:
   Enabled: true
 
+# Align else with if
 Layout/ElseAlignment:
   Enabled: true
 
-# Align `end` with the matching keyword or starting expression except for
-# assignments, where it should be aligned with the LHS.
+# Align `end` with the matching keyword
+# https://rubystyle.guide/#indent-conditional-assignment
 Layout/EndAlignment:
+  EnforcedStyleAlignWith: keyword
   Enabled: true
-  EnforcedStyleAlignWith: variable
   AutoCorrect: true
 
+# Use Unix-style line endings
+# https://rubystyle.guide/#crlf
+Layout/EndOfLine:
+  Enabled: true
+
+# Separate magic comments from code with blank line
+# https://rubystyle.guide/#separate-magic-comments-from-code
 Layout/EmptyLineAfterMagicComment:
   Enabled: true
 
-Layout/EmptyLinesAroundBlockBody:
-  Enabled: true
-
-# In a regular class definition, no empty lines around the body.
-Layout/EmptyLinesAroundClassBody:
-  Enabled: true
-
-# In a regular method definition, no empty lines around the body.
-Layout/EmptyLinesAroundMethodBody:
-  Enabled: true
-
-# In a regular module definition, no empty lines around the body.
-Layout/EmptyLinesAroundModuleBody:
-  Enabled: true
-
-# Align block 'end's either with the start of the block or with the first
-# character of the line containing the start of the block
-Layout/BlockAlignment:
-  Enabled: true
-  EnforcedStyleAlignWith: either
-
-# Enforce empty line between method definitions 
+# Use empty lines between method definitions
+# https://rubystyle.guide/#empty-lines-between-methods
 Layout/EmptyLineBetweenDefs:
   Enabled: true
 
+# No empty lines around block bodies
+# https://rubystyle.guide/#empty-lines-around-bodies
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: true
+
+# No empty lines around class bodies
+# https://rubystyle.guide/#empty-lines-around-bodies
+Layout/EmptyLinesAroundClassBody:
+  Enabled: true
+
+# No empty lines around method bodies
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+
+# No empty lines around module bodies
+# https://rubystyle.guide/#empty-lines-around-bodies
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
+
+# Indent first method argument properly
+# https://rubystyle.guide/#no-double-indent
 Layout/FirstArgumentIndentation:
+  EnforcedStyle: consistent
+  Severity: warning
+
+# Indent first array element properly
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
   Enabled: true
 
-# Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
-Style/HashSyntax:
-  Enabled: true
-
-# Method definitions after `private` or `protected` isolated calls need one
-# extra level of indentation.
+# Method definitions after `private` or `protected` should be indented consistently
 Layout/IndentationConsistency:
+  EnforcedStyle: normal
   Enabled: true
-  EnforcedStyle: indented_internal_methods
 
-# Two spaces, no tabs (for indentation).
+# Two spaces per indentation level
+# https://rubystyle.guide/#spaces-indentation
 Layout/IndentationWidth:
   Enabled: true
 
+# Use spaces for indentation, not tabs
+# https://rubystyle.guide/#tabs-or-spaces
+Layout/IndentationStyle:
+  Enabled: true
+
+# Use space after # in comments
+# https://rubystyle.guide/#hash-space
 Layout/LeadingCommentSpace:
   Enabled: true
 
-Layout/SpaceAfterColon:
-  Enabled: true
-
-Layout/SpaceAfterComma:
-  Enabled: true
-
-Layout/SpaceAroundEqualsInParameterDefault:
-  Enabled: true
-
-Layout/SpaceAroundKeyword:
-  Enabled: true
-
-Layout/SpaceAroundOperators:
-  Enabled: true
-
-Layout/SpaceBeforeComma:
-  Enabled: true
-
-Layout/SpaceBeforeComment:
-  Enabled: true
-
-Layout/SpaceBeforeFirstArg:
-  Enabled: true
-  Exclude:
-    - "**/spec/**/*"
-
-Style/DefWithParentheses:
-  Enabled: true
-
-# Defining a method with parameters needs parentheses.
-Style/MethodDefParentheses:
-  Enabled: true
-
-Style/FrozenStringLiteralComment:
-  Enabled: false
-  EnforcedStyle: always
-
+# Limit lines to reasonable length
+# https://rubystyle.guide/#max-line-length
 Layout/LineLength:
   Enabled: true
   Max: 128
 
-# Use `foo {}` not `foo{}`.
+# Align chained method calls
+# https://rubystyle.guide/#consistent-multi-line-chains
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: aligned
+  Enabled: true
+
+# Use space after colon
+Layout/SpaceAfterColon:
+  Enabled: true
+
+# Use space after comma
+Layout/SpaceAfterComma:
+  Enabled: true
+
+# Use spaces around = in default parameters
+# https://rubystyle.guide/#spaces-around-equals
+Layout/SpaceAroundEqualsInParameterDefault:
+  Enabled: true
+
+# Use spaces around keywords
+Layout/SpaceAroundKeyword:
+  Enabled: true
+
+# Use spaces around operators
+# https://rubystyle.guide/#spaces-operators
+Layout/SpaceAroundOperators:
+  Enabled: true
+
+# Use `foo {}` not `foo{}`
+# https://rubystyle.guide/#spaces-braces
 Layout/SpaceBeforeBlockBraces:
   Enabled: true
 
-# Use `foo { bar }` not `foo {bar}`.
+# No space before comma
+Layout/SpaceBeforeComma:
+  Enabled: true
+
+# Use space before inline comments
+Layout/SpaceBeforeComment:
+  Enabled: true
+
+# No space between method name and opening parenthesis
+# https://rubystyle.guide/#parens-no-spaces
+Layout/SpaceBeforeFirstArg:
+  Enabled: true
+
+# Use `foo { bar }` not `foo {bar}`
+# https://rubystyle.guide/#spaces-braces
 Layout/SpaceInsideBlockBraces:
+  EnforcedStyle: space
   Enabled: true
 
-# Use `{ a: 1 }` not `{a:1}`.
+# Use `{ a: 1 }` not `{a:1}`
+# https://rubystyle.guide/#spaces-braces
 Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: space
   Enabled: true
 
+# No space inside parentheses
+# https://rubystyle.guide/#no-space-inside-range-literals
 Layout/SpaceInsideParens:
+  EnforcedStyle: no_space
   Enabled: true
 
-# Check quotes usage according to lint rule below.
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
-
-# Detect hard tabs, no hard tabs.
-Layout/IndentationStyle:
-  Enabled: true
-
-# Blank lines should not have any spaces.
+# End files with a newline
+# https://rubystyle.guide/#newline-eof
 Layout/TrailingEmptyLines:
   Enabled: true
 
-# No trailing whitespace.
+# No trailing whitespace
+# https://rubystyle.guide/#no-trailing-whitespace
 Layout/TrailingWhitespace:
   Enabled: true
 
+# Avoid ambiguous block association with method call
+Lint/AmbiguousBlockAssociation:
+  Enabled: true
+
+# Wrap safe assignment in parentheses when used in condition
+# https://rubystyle.guide/#safe-assignment-in-condition
+Lint/AssignmentInCondition:
+  Enabled: true
+
+# Don't define constants in blocks
+# https://rubystyle.guide/#no-constant-definition-in-block
+Lint/ConstantDefinitionInBlock:
+  Enabled: true
+
+# Don't leave debugger statements in code
 Lint/Debugger:
   Enabled: true
 
-# Detect redundant disabling of cops and automatically remove them with --autocorrect
+# Avoid empty class definitions
+Lint/EmptyClass:
+  Enabled: true
+
+# Don't return from ensure blocks
+# https://rubystyle.guide/#no-return-ensure
+Lint/EnsureReturn:
+  Enabled: true
+
+# Don't define nested methods; use lambda instead
+# https://rubystyle.guide/#no-nested-methods
+Lint/NestedMethodDefinition:
+  Enabled: true
+
+# Detect redundant disabling of cops
 Lint/RedundantCopDisableDirective:
   Enabled: true
 
-# Use quotes for string literals when they are enough.
-Style/RedundantPercentQ:
-  Enabled: true
-
-# Use my_method(my_arg) not my_method( my_arg ) or my_method my_arg.
-Lint/RequireParentheses:
-  Enabled: true
-
+# Avoid redundant string coercion
 Lint/RedundantStringCoercion:
   Enabled: true
 
+# Use parentheses for method calls with arguments
+Lint/RequireParentheses:
+  Enabled: true
+
+# Don't rescue Exception class
+# https://rubystyle.guide/#no-blind-rescues
+Lint/RescueException:
+  Enabled: true
+
+# Avoid shadowing methods with local variables
+# https://rubystyle.guide/#no-shadowing
+Lint/ShadowingOuterLocalVariable:
+  Enabled: true
+
+# Don't suppress exceptions without handling
+# https://rubystyle.guide/#dont-hide-exceptions
+Lint/SuppressedException:
+  Enabled: true
+
+# Prefix unused block arguments with underscore
+# https://rubystyle.guide/#underscore-unused-vars
+Lint/UnusedBlockArgument:
+  Enabled: true
+
+# Prefix unused method arguments with underscore
+# https://rubystyle.guide/#underscore-unused-vars
+Lint/UnusedMethodArgument:
+  Enabled: true
+
+# URI.escape is obsolete
 Lint/UriEscapeUnescape:
   Enabled: true
 
-Style/ParenthesesAroundCondition:
+# Keep methods short (under 10 lines ideally)
+# https://rubystyle.guide/#short-methods
+Metrics/MethodLength:
   Enabled: true
 
-Style/RedundantReturn:
-  Enabled: true
-  AllowMultipleReturnValues: true
-
-Style/Semicolon:
-  Enabled: true
-  AllowAsExpressionSeparator: true
-
-# Prefer Foo.method over Foo::method
-Style/ColonMethodCall:
+# Avoid long parameter lists (3-4 items max)
+# https://rubystyle.guide/#too-many-params
+Metrics/ParameterLists:
+  Max: 4
   Enabled: true
 
-Style/TrivialAccessors:
+# Avoid get_/set_ prefixes for accessor methods
+# https://rubystyle.guide/#accessor_mutator_method_names
+Naming/AccessorMethodName:
   Enabled: true
 
-# Use guard clauses when possible
-Style/GuardClause:
+# Use English for identifiers
+# https://rubystyle.guide/#english-identifiers
+Naming/AsciiIdentifiers:
   Enabled: true
 
+# Use CapitalCase for classes and modules
+# https://rubystyle.guide/#camelcase-classes
+Naming/ClassAndModuleCamelCase:
+  Enabled: true
+
+# Use SCREAMING_SNAKE_CASE for constants
+# https://rubystyle.guide/#screaming-snake-case
+Naming/ConstantName:
+  Enabled: true
+
+# Use snake_case for filenames
+# https://rubystyle.guide/#snake-case-files
+Naming/FileName:
+  Enabled: true
+
+# Use snake_case for method names
+# https://rubystyle.guide/#snake-case-symbols-methods-vars
+Naming/MethodName:
+  Enabled: true
+
+# Avoid is_, does_, can_ prefixes for predicate methods
+# https://rubystyle.guide/#bool-methods-prefix
+Naming/PredicatePrefix:
+  Enabled: true
+
+# Use snake_case for variable names
+# https://rubystyle.guide/#snake-case-symbols-methods-vars
+Naming/VariableName:
+  Enabled: true
+
+Performance/EndWith:
+  Enabled: true
+
+# Use flat_map over map + flatten
+# https://rubystyle.guide/#flat-map
 Performance/FlatMap:
   Enabled: true
 
 Performance/RedundantMerge:
   Enabled: true
 
+Performance/RegexpMatch:
+  Enabled: true
+
 Performance/StartWith:
   Enabled: true
 
-Performance/EndWith:
-  Enabled: true
-
-Performance/RegexpMatch:
-  Enabled: true
+RSpec/ContextMethod:
+  Severity: info
 
 RSpec/ContextWording:
   Enabled: false
 
-RSpec/ContextMethod:
+# Enforce empty line between 'it' blocks (allows oneliners)
+RSpec/EmptyLineAfterExample:
+  Enabled: true
   Severity: info
 
 RSpec/ExampleLength:
@@ -347,7 +448,351 @@ RSpec/MultipleExpectations:
 RSpec/NestedGroups:
   Enabled: false
 
-# Enforce empty line between 'it' blocks (allows oneliners)
-RSpec/EmptyLineAfterExample:
+# Prefer alias over alias_method for lexical scope
+# https://rubystyle.guide/#alias-method-lexically
+Style/Alias:
+  EnforcedStyle: prefer_alias
   Enabled: true
-  Severity: info
+
+# Prefer &&/|| over and/or for boolean logic
+# https://rubystyle.guide/#and-or-flow
+Style/AndOr:
+  Enabled: true
+
+# Use Ruby 2.7+ arguments forwarding (...)
+# https://rubystyle.guide/#arguments-forwarding
+Style/ArgumentsForwarding:
+  Enabled: true
+
+# Use resource methods with automatic cleanup
+# https://rubystyle.guide/#auto-release-resources
+Style/AutoResourceCleanup:
+  Enabled: true
+
+# Avoid BEGIN blocks
+# https://rubystyle.guide/#no-BEGIN-blocks
+Style/BeginBlock:
+  Enabled: true
+
+# Use {} for single-line blocks, do...end for multi-line
+# https://rubystyle.guide/#single-line-blocks
+Style/BlockDelimiters:
+  EnforcedStyle: line_count_based
+  Enabled: true
+
+# Avoid explicit === operator use
+# https://rubystyle.guide/#no-case-equality
+Style/CaseEquality:
+  Enabled: true
+
+# Prefer case over if-elsif chains
+Style/CaseLikeIf:
+  Enabled: true
+
+# Use compact module/class nesting
+# https://rubystyle.guide/#namespace-definition
+Style/ClassAndModuleChildren:
+  Enabled: true
+
+# Prefer is_a? over kind_of?
+Style/ClassCheck:
+  Enabled: true
+
+# Use def self.method for class methods
+Style/ClassMethodsDefinitions:
+  Enabled: true
+
+# Avoid class variables (@@)
+# https://rubystyle.guide/#no-class-vars
+Style/ClassVars:
+  Enabled: true
+
+# Use preferred method names (e.g., map vs collect)
+# https://rubystyle.guide/#map-find-select-reduce-include-size
+Style/CollectionMethods:
+  Enabled: true
+
+# Use :: only for constants, not regular methods
+# https://rubystyle.guide/#double-colons
+Style/ColonMethodCall:
+  Enabled: true
+
+# Format comment annotations properly
+# https://rubystyle.guide/#annotate-keywords
+Style/CommentAnnotation:
+  Enabled: true
+
+# Simplify conditional variable assignment
+Style/ConditionalAssignment:
+  Enabled: true
+
+# Don't use DateTime unless necessary
+# https://rubystyle.guide/#no-datetime
+Style/DateTime:
+  Enabled: true
+
+# Use def with parentheses when there are parameters
+# https://rubystyle.guide/#method-parens
+Style/DefWithParentheses:
+  Enabled: true
+
+# Avoid unnecessary !!
+# https://rubystyle.guide/#no-bang-bang
+Style/DoubleNegation:
+  Enabled: true
+
+# Avoid for loops; use iterators
+# https://rubystyle.guide/#no-for-loops
+Style/For:
+  EnforcedStyle: each
+  Enabled: true
+
+# Magic comment for frozen string literals
+Style/FrozenStringLiteralComment:
+  Enabled: false
+  EnforcedStyle: always
+
+# Use guard clauses instead of nested conditionals
+# https://rubystyle.guide/#no-nested-conditionals
+Style/GuardClause:
+  Enabled: true
+
+Style/HashConversion:
+  Enabled: true
+
+# Use Hash#each_key / #each_value
+# https://rubystyle.guide/#hash-each
+Style/HashEachMethods:
+  Enabled: true
+
+# Use Ruby 1.9+ hash syntax for symbol keys
+# https://rubystyle.guide/#hash-literals
+Style/HashSyntax:
+  EnforcedStyle: no_mixed_keys
+  EnforcedShorthandSyntax: always
+  Enabled: true
+
+# Use transform_keys for hash key transformation
+# https://rubystyle.guide/#hash-transform-methods
+Style/HashTransformKeys:
+  Enabled: true
+
+# Use transform_values for hash value transformation
+# https://rubystyle.guide/#hash-transform-methods
+Style/HashTransformValues:
+  Enabled: true
+
+# Use Kernel#loop for infinite loops
+# https://rubystyle.guide/#infinite-loop
+Style/InfiniteLoop:
+  Enabled: true
+
+# Use lambda for multi-line blocks, -> for single-line
+# https://rubystyle.guide/#lambda-multi-line
+Style/Lambda:
+  EnforcedStyle: line_count_dependent
+  Enabled: true
+
+# Prefer .call() for proc invocation
+# https://rubystyle.guide/#proc-call
+Style/LambdaCall:
+  EnforcedStyle: call
+  Enabled: true
+
+# Use << for string construction instead of concatenation
+Style/LineEndConcatenation:
+  Enabled: true
+
+# Format magic comments consistently
+Style/MagicCommentFormat:
+  Enabled: true
+
+# Use parentheses for method definitions with parameters
+# https://rubystyle.guide/#method-parens
+Style/MethodDefParentheses:
+  Enabled: true
+
+# Use parentheses for method calls with arguments
+# https://rubystyle.guide/#method-call-parentheses
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+  AllowedMethods:
+    - allow
+    - allow_any_instance_of
+    - authorize
+    - be
+    - be_a
+    - change
+    - confirmed_order
+    - contain_exactly
+    - describe
+    - eq
+    - expect
+    - expect_any_instance_of
+    - fail
+    - have_button
+    - have_content
+    - have_field
+    - have_link
+    - have_selector
+    - have_text
+    - head
+    - include
+    - include?
+    - info
+    - log
+    - match
+    - match_array
+    - move_down
+    - not_to
+    - on
+    - p
+    - print
+    - puts
+    - raise
+    - raise_error
+    - redirect_to
+    - render
+    - send_data
+    - snapshot!
+    - step_to
+    - to
+    - travel
+    - use
+
+# Omit parentheses for method calls without arguments
+Style/MethodCallWithoutArgsParentheses:
+  Enabled: true
+
+# Split multiple mixins into separate statements
+# https://rubystyle.guide/#mixin-grouping
+Style/MixinGrouping:
+  Enabled: true
+
+# Prefer module_function over extend self
+# https://rubystyle.guide/#module-function
+Style/ModuleFunction:
+  Enabled: true
+
+# Use modifier if/unless for single-line bodies
+Style/MultilineIfModifier:
+  Enabled: true
+
+# Avoid mutable hash default values
+# https://rubystyle.guide/#no-mutable-defaults
+Style/MutableConstant:
+  Enabled: true
+
+# Prefer unless for negative conditions
+# https://rubystyle.guide/#unless-for-negatives
+Style/NegatedIf:
+  Enabled: true
+
+# Avoid nested modifier conditions
+# https://rubystyle.guide/#no-nested-modifiers
+Style/NestedModifier:
+  Enabled: true
+
+# Define optional arguments at end of parameter list
+# https://rubystyle.guide/#optional-arguments
+Style/OptionalArguments:
+  Enabled: true
+
+# Don't parenthesize control expression conditions
+# https://rubystyle.guide/#no-parens-around-condition
+Style/ParenthesesAroundCondition:
+  Enabled: true
+
+# Use Hash#key? over has_key?
+# https://rubystyle.guide/#hash-key
+Style/PreferredHashMethods:
+  Enabled: true
+
+# Supply exception class and message separately
+# https://rubystyle.guide/#exception-class-messages
+Style/RaiseArgs:
+  Enabled: true
+
+# Avoid explicit return where not required
+# https://rubystyle.guide/#no-explicit-return
+Style/RedundantReturn:
+  Enabled: true
+
+# Use quotes for string literals when sufficient
+# NOT RELATED TO RUBY STYLE GUIDE
+Style/RedundantPercentQ:
+  Enabled: true
+
+# Don't use semicolons except as expression separators
+# https://rubystyle.guide/#no-semicolon
+Style/Semicolon:
+  Enabled: true
+  AllowAsExpressionSeparator: true
+
+# Prefer raise over fail
+Style/SignalException:
+  Enabled: true
+
+# Avoid single-line methods
+# https://rubystyle.guide/#no-single-line-methods
+Style/SingleLineMethods:
+  Enabled: true
+
+# Simplify nested conditionals
+# NOT RELATED TO RUBY STYLE GUIDE
+Style/SoleNestedConditional:
+  Enabled: true
+
+# Adopt consistent string quoting style
+# https://rubystyle.guide/#consistent-string-literals
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+# Use << for string construction
+Style/StringConcatenation:
+  Enabled: true
+
+# Don't extend Struct.new instances
+# https://rubystyle.guide/#no-extend-struct-new
+Style/StructInheritance:
+  Enabled: true
+
+# Use %i for symbol arrays
+# https://rubystyle.guide/#percent-i
+Style/SymbolArray:
+  EnforcedStyle: brackets
+  Enabled: true
+
+# Use Proc shorthand for single-action blocks
+# https://rubystyle.guide/#single-action-blocks
+Style/SymbolProc:
+  Enabled: true
+
+# Avoid trailing commas in array literals
+# https://rubystyle.guide/#no-trailing-array-commas
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: no_comma
+  Enabled: true
+
+# Avoid trailing commas in block arguments
+# https://rubystyle.guide/#no-trailing-parameters-comma
+Style/TrailingCommaInBlockArgs:
+  Enabled: true
+
+# Handle trailing commas in hash literals consistently
+# https://rubystyle.guide/#no-trailing-array-commas
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+  Enabled: true
+
+# Use attr_family for trivial accessors
+# https://rubystyle.guide/#attr_family
+Style/TrivialAccessors:
+  Enabled: true
+
+# Use %w for word arrays
+# https://rubystyle.guide/#percent-w
+Style/WordArray:
+  EnforcedStyle: brackets
+  Enabled: true
