@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/sequra/sequra-style/compare/v1.7.0...v1.8.0) (2026-01-20)
+
+
+### Features
+
+* Enforce Ruby Style Guide compliance with surveyed team preferences ([#51](https://github.com/sequra/sequra-style/issues/51)) ([f0ffdf4](https://github.com/sequra/sequra-style/commit/f0ffdf4b0bcbdcd43ec399fb1d5f867f408bdb93))
+
 ## [1.7.0](https://github.com/sequra/sequra-style/compare/v1.6.0...v1.7.0) (2025-12-05)
 
 
