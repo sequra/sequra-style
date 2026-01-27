@@ -54,8 +54,9 @@ Rails/FilePath:
   EnforcedStyle: "arguments"
 
 Rails/Output:
-  Exclude:
-    - "**/spec/**/*"
+  Include:
+    - "app/**/*.rb"
+    - "packs/*/app/**/*.rb"
 
 # Prefer assert_not_x over refute_x
 Rails/RefuteMethods:
