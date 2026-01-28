@@ -53,6 +53,11 @@ Rails/ContentTag:
 Rails/FilePath:
   EnforcedStyle: "arguments"
 
+Rails/Output:
+  Include:
+    - "app/**/*.rb"
+    - "packs/*/app/**/*.rb"
+
 # Prefer assert_not_x over refute_x
 Rails/RefuteMethods:
   Include:
@@ -361,6 +366,11 @@ Lint/UriEscapeUnescape:
 # https://rubystyle.guide/#short-methods
 Metrics/MethodLength:
   Enabled: true
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
+    - method_call
 
 # Avoid long parameter lists (3-4 items max)
 # https://rubystyle.guide/#too-many-params
