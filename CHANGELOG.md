@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/sequra/sequra-style/compare/v1.8.0...v1.8.1) (2026-01-28)
+
+
+### Bug Fixes
+
+* [COR-701] Exclude spec files from Rails/Output cop ([#53](https://github.com/sequra/sequra-style/issues/53)) ([75885fb](https://github.com/sequra/sequra-style/commit/75885fb7764f6bbc6c29fda28a53a7354a440e94))
+
 ## [1.8.0](https://github.com/sequra/sequra-style/compare/v1.7.0...v1.8.0) (2026-01-20)
 
 
