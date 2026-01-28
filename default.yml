@@ -366,6 +366,11 @@ Lint/UriEscapeUnescape:
 # https://rubystyle.guide/#short-methods
 Metrics/MethodLength:
   Enabled: true
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
+    - method_call
 
 # Avoid long parameter lists (3-4 items max)
 # https://rubystyle.guide/#too-many-params
