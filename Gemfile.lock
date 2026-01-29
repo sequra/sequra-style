@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sequra-style (1.8.1)
+    sequra-style (1.9.0)
       rubocop (~> 1)
       rubocop-performance (~> 1)
       rubocop-rails (~> 2)
