@@ -133,6 +133,10 @@ Layout/ClassStructure:
 Layout/CommentIndentation:
   Enabled: true
 
+# Align `end` with `def`
+Layout/DefEndAlignment:
+  Enabled: true
+
 # Align else with if
 Layout/ElseAlignment:
   Enabled: true
