@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/sequra/sequra-style/compare/v1.8.1...v1.9.0) (2026-01-29)
+
+
+### Features
+
+* [COR-724] Enforce def/end alignment ([#55](https://github.com/sequra/sequra-style/issues/55)) ([09d54f5](https://github.com/sequra/sequra-style/commit/09d54f52a914260743befae8364a30afdabb0ddb))
+
 ## [1.8.1](https://github.com/sequra/sequra-style/compare/v1.8.0...v1.8.1) (2026-01-28)
 
 
