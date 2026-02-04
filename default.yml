@@ -810,3 +810,17 @@ Style/TrivialAccessors:
 Style/WordArray:
   EnforcedStyle: brackets
   Enabled: true
+
+# Custom Sequra cops
+
+# Enforce async job pattern: each job should delegate to exactly one Operation
+# and stay within the maximum class length (10 lines).
+Sequra/AsyncJobPattern:
+  Enabled: true
+  Include:
+    - "app/jobs/**/*.rb"
+    - "app/workers/**/*.rb"
+    - "packs/*/app/jobs/**/*.rb"
+    - "packs/*/app/workers/**/*.rb"
+  Exclude:
+    - "**/application_job.rb"

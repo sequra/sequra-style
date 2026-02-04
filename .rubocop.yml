@@ -1,2 +1,5 @@
+require:
+  - ./lib/sequra_style
+
 inherit_from:
   - default.yml
