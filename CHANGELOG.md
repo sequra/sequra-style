@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/sequra/sequra-style/compare/v1.9.0...v1.10.0) (2026-02-05)
+
+
+### Features
+
+* [COR-689] Add Sequra/AsyncJobPattern cop ([#57](https://github.com/sequra/sequra-style/issues/57)) ([fe8007f](https://github.com/sequra/sequra-style/commit/fe8007f2932670de3203ff1d486d4c2fc90b123c))
+
 ## [1.9.0](https://github.com/sequra/sequra-style/compare/v1.8.1...v1.9.0) (2026-01-29)
 
 
