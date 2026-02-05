@@ -64,6 +64,32 @@ RSpec.describe RuboCop::Cop::Sequra::AsyncJobPattern, :config do
         RUBY
       end
     end
+
+    context "with dynamic operation call" do
+      it "registers an offense (known limitation - dynamic calls not detected)" do
+        expect_offense(<<~RUBY)
+          class MyJob < ApplicationJob
+                ^^^^^ Sidekiq job should delegate to exactly one Operation
+            def perform(operation_class, id)
+              operation_class.call(id: id)
+            end
+          end
+        RUBY
+      end
+    end
+
+    context "with non-Operation class call" do
+      it "registers an offense for MyService.call" do
+        expect_offense(<<~RUBY)
+          class MyJob < ApplicationJob
+                ^^^^^ Sidekiq job should delegate to exactly one Operation
+            def perform(id)
+              MyService.call(id: id)
+            end
+          end
+        RUBY
+      end
+    end
   end
 
   context "when class includes Sidekiq::Worker" do
@@ -209,6 +235,23 @@ RSpec.describe RuboCop::Cop::Sequra::AsyncJobPattern, :config do
               four: 4,
               five: 5
             }
+
+            def perform(id)
+              MyOperation.call(id: id)
+            end
+          end
+        RUBY
+      end
+
+      it "counts nested multiline constructs correctly" do
+        expect_no_offenses(<<~RUBY)
+          class MyJob < ApplicationJob
+            ITEMS = [
+              { a: 1, b: 2 },
+              { c: 3, d: 4 },
+              { e: 5, f: 6 },
+              { g: 7, h: 8 }
+            ]
 
             def perform(id)
               MyOperation.call(id: id)

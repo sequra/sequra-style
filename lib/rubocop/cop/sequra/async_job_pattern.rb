@@ -47,6 +47,7 @@ module RuboCop
 
         MAX_CLASS_LENGTH = 10
         COUNT_AS_ONE = ["array", "hash", "heredoc", "method_call"].freeze
+        OPERATION_CLASS_PATTERN = /Operation$/
 
         def_node_matcher :application_job_subclass?, <<~PATTERN
           (class _ (const nil? :ApplicationJob) ...)
@@ -57,7 +58,7 @@ module RuboCop
         PATTERN
 
         def_node_matcher :operation_call?, <<~PATTERN
-          (send (const _ /Operation$/) :call ...)
+          (send (const _ OPERATION_CLASS_PATTERN) :call ...)
         PATTERN
 
         def on_class(node)
@@ -149,6 +150,7 @@ module RuboCop
           when "hash" then node.hash_type?
           when "heredoc" then node.str_type? && node.heredoc?
           when "method_call" then multiline_method_call?(node)
+          else false
           end
         end
 
