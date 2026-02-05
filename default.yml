@@ -1,3 +1,6 @@
+require:
+  - sequra_style
+
 plugins:
   - rubocop-performance
   - rubocop-rails
