@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.1](https://github.com/sequra/sequra-style/compare/v1.10.0...v1.10.1) (2026-02-05)
+
+
+### Bug Fixes
+
+* [COR-689] Fix custom cop loading in published gem ([#60](https://github.com/sequra/sequra-style/issues/60)) ([6e7f4ab](https://github.com/sequra/sequra-style/commit/6e7f4ab167c099f5cca4a41f2e1ae30187596e81))
+
 ## [1.10.0](https://github.com/sequra/sequra-style/compare/v1.9.0...v1.10.0) (2026-02-05)
 
 
