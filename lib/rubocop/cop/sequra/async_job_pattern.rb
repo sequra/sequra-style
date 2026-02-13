@@ -61,6 +61,10 @@ module RuboCop
           (send (const _ OPERATION_CLASS_PATTERN) :call ...)
         PATTERN
 
+        def_node_matcher :sidekiq_retry_in?, <<~PATTERN
+          (block (send nil? :sidekiq_retry_in ...) ...)
+        PATTERN
+
         def on_class(node)
           return unless sidekiq_job?(node)
 
@@ -131,7 +135,7 @@ module RuboCop
           return adjustment unless node.body
 
           node.body.each_descendant do |descendant|
-            next unless count_as_one_node?(descendant)
+            next unless count_as_one_node?(descendant) || sidekiq_config_node?(descendant)
 
             lines = descendant.loc.last_line - descendant.loc.first_line
             adjustment += lines if lines.positive?
@@ -142,6 +146,14 @@ module RuboCop
 
         def count_as_one_node?(node)
           COUNT_AS_ONE.any? { |type| node_matches_type?(node, type) }
+        end
+
+        def sidekiq_config_node?(node)
+          sidekiq_retry_in?(node) || sidekiq_options?(node)
+        end
+
+        def sidekiq_options?(node)
+          node.send_type? && node.method_name == :sidekiq_options
         end
 
         def node_matches_type?(node, type)
