@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/sequra/sequra-style/compare/v1.10.1...v1.11.0) (2026-02-13)
+
+
+### Features
+
+* consider node_options as a single line ([#62](https://github.com/sequra/sequra-style/issues/62)) ([8d773bf](https://github.com/sequra/sequra-style/commit/8d773bf6b30357c378f4d58942fe10d9191747e8))
+
 ## [1.10.1](https://github.com/sequra/sequra-style/compare/v1.10.0...v1.10.1) (2026-02-05)
 
 
