@@ -259,6 +259,25 @@ RSpec.describe RuboCop::Cop::Sequra::AsyncJobPattern, :config do
           end
         RUBY
       end
+
+      it "excludes sidekiq_retry_in block from line count" do
+        expect_no_offenses(<<~RUBY)
+          class MyJob < ApplicationJob
+            sidekiq_retry_in do |_count, exception|
+              case exception
+              when ActiveRecord::Deadlocked
+                10.minutes.seconds.to_i
+              else
+                :kill
+              end
+            end
+
+            def perform(id)
+              MyOperation.call(id: id)
+            end
+          end
+        RUBY
+      end
     end
   end
 
