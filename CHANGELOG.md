@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/sequra/sequra-style/compare/v1.11.0...v1.12.0) (2026-03-05)
+
+
+### Features
+
+* Remove migrations and bin from cops ([#64](https://github.com/sequra/sequra-style/issues/64)) ([d55240d](https://github.com/sequra/sequra-style/commit/d55240d2f9e979c5cfa7ce7d10755eaac6e7ea87))
+
 ## [1.11.0](https://github.com/sequra/sequra-style/compare/v1.10.1...v1.11.0) (2026-02-13)
 
 
