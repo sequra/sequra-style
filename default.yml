@@ -16,9 +16,10 @@ AllCops:
     - "**/node_modules/**/*"
     - "local_files/**/*"
     - db/*.rb
+	- bin/*
 
     # Exclude migration files created before December 2025:
-    # NOTE: Do not keep adding new exlcusions here. New migrations after this are expected to comply with the current style
+    # NOTE: Do not keep adding new exclusions here. New migrations after this are expected to comply with the current style
     # guide.
     - db/*/2011*.rb
     - db/*/2012*.rb
@@ -676,6 +677,8 @@ Style/MethodCallWithArgsParentheses:
     - to
     - travel
     - use
+  Exclude:
+    - "db/migrate/*.rb
 
 # Omit parentheses for method calls without arguments
 Style/MethodCallWithoutArgsParentheses:
