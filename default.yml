@@ -678,7 +678,7 @@ Style/MethodCallWithArgsParentheses:
     - travel
     - use
   Exclude:
-    - "db/migrate/*.rb
+    - db/migrate/*.rb
 
 # Omit parentheses for method calls without arguments
 Style/MethodCallWithoutArgsParentheses:
