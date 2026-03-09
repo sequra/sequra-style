@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.1](https://github.com/sequra/sequra-style/compare/v1.12.0...v1.12.1) (2026-03-09)
+
+
+### Bug Fixes
+
+* Removed extra quotes ([#66](https://github.com/sequra/sequra-style/issues/66)) ([3a17753](https://github.com/sequra/sequra-style/commit/3a17753ee10404f6a3d99e51058a238ee5584a05))
+
 ## [1.12.0](https://github.com/sequra/sequra-style/compare/v1.11.0...v1.12.0) (2026-03-05)
 
 
