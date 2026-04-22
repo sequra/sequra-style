@@ -672,6 +672,8 @@ Style/MethodCallWithArgsParentheses:
     - redirect_to
     - render
     - send_data
+    - shared_context
+    - shared_examples
     - snapshot!
     - step_to
     - to
