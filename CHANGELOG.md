@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.0](https://github.com/sequra/sequra-style/compare/v1.12.1...v1.13.0) (2026-04-24)
+
+
+### Features
+
+* Add shared_context and shared_examples exceptions to MethodCallWithArgsParentheses ([#68](https://github.com/sequra/sequra-style/issues/68)) ([73ab730](https://github.com/sequra/sequra-style/commit/73ab73073aaacaf32e0a6f92859e50361f832bd3))
+
 ## [1.12.1](https://github.com/sequra/sequra-style/compare/v1.12.0...v1.12.1) (2026-03-09)
 
 
