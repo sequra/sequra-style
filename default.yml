@@ -832,3 +832,16 @@ Sequra/AsyncJobPattern:
     - "packs/*/app/workers/**/*.rb"
   Exclude:
     - "**/application_job.rb"
+
+# Forbid stubbing/spying on Sidekiq enqueue methods in specs. Stubs bypass
+# `Sidekiq.strict_args!` validation, which has caused silent production
+# failures (COR-1923). Use `have_enqueued_sidekiq_job` or
+# `change(Job.jobs, :size)` instead. `.and_call_original` is exempt.
+# Ships disabled so consumer repos opt in on their own timeline (paired with
+# `.rubocop_todo.yml` to grandfather existing offenses).
+Sequra/NoSidekiqPerformStubs:
+  Enabled: false
+  Include:
+    - "**/*_spec.rb"
+    - "**/spec/support/**/*.rb"
+    - "**/spec/shared_examples/**/*.rb"
