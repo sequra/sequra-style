@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://github.com/sequra/sequra-style/compare/v1.13.0...v1.14.0) (2026-05-14)
+
+
+### Features
+
+* [COR-1992] Add Sequra/NoSidekiqPerformStubs cop ([#70](https://github.com/sequra/sequra-style/issues/70)) ([1a89ca4](https://github.com/sequra/sequra-style/commit/1a89ca4a9bcf2f12837f4d54d4aa5f4e7d54c899))
+
 ## [1.13.0](https://github.com/sequra/sequra-style/compare/v1.12.1...v1.13.0) (2026-04-24)
 
 
