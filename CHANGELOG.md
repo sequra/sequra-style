@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.0](https://github.com/sequra/sequra-style/compare/v1.14.0...v1.15.0) (2026-05-18)
+
+
+### Features
+
+* Expand Metrics/ParameterLists to not count keyword arguments ([#72](https://github.com/sequra/sequra-style/issues/72)) ([b948319](https://github.com/sequra/sequra-style/commit/b948319c93397e02fae97f7eeb2c5a58cdbcdee2))
+
 ## [1.14.0](https://github.com/sequra/sequra-style/compare/v1.13.0...v1.14.0) (2026-05-14)
 
 
