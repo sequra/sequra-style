@@ -385,6 +385,7 @@ Metrics/MethodLength:
 Metrics/ParameterLists:
   Max: 4
   Enabled: true
+  CountKeywordArgs: false
 
 # Avoid get_/set_ prefixes for accessor methods
 # https://rubystyle.guide/#accessor_mutator_method_names
