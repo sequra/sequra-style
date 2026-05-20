@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/sequra/sequra-style/compare/v1.15.0...v1.16.0) (2026-05-20)
+
+
+### Features
+
+* [COR-1993] Enable Style/RedundantConstantBase cop ([#74](https://github.com/sequra/sequra-style/issues/74)) ([33396f6](https://github.com/sequra/sequra-style/commit/33396f673cf7bd02c70e67e28aefd4f3b5bb2996))
+
 ## [1.15.0](https://github.com/sequra/sequra-style/compare/v1.14.0...v1.15.0) (2026-05-18)
 
 
