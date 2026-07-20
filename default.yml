@@ -716,6 +716,12 @@ Style/NegatedIf:
 Style/NestedModifier:
   Enabled: true
 
+# Ban OpenStruct usage (allocation-heavy: a singleton class + accessor methods
+# per instance). Prefer Data.define, Struct, a plain class, or test doubles.
+# Grandfather existing usages in your project's .rubocop_todo.yml.
+Style/OpenStructUse:
+  Enabled: true
+
 # Define optional arguments at end of parameter list
 # https://rubystyle.guide/#optional-arguments
 Style/OptionalArguments:
