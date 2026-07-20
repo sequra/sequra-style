@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.0](https://github.com/sequra/sequra-style/compare/v1.16.0...v1.17.0) (2026-07-20)
+
+
+### Features
+
+* **rubocop:** enable Style/OpenStructUse ([#77](https://github.com/sequra/sequra-style/issues/77)) ([713e0a5](https://github.com/sequra/sequra-style/commit/713e0a5e8b45ab3ccfd68a5aab2618a7c9a2bd4e))
+
 ## [1.16.0](https://github.com/sequra/sequra-style/compare/v1.15.0...v1.16.0) (2026-05-20)
 
 
