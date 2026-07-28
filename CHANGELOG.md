@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.18.0](https://github.com/sequra/sequra-style/compare/v1.17.0...v1.18.0) (2026-07-28)
+
+
+### Features
+
+* **rubocop:** add PrometheusMetricLabels cop ([#79](https://github.com/sequra/sequra-style/issues/79)) ([a8f3ec1](https://github.com/sequra/sequra-style/commit/a8f3ec16cdf9779ad391c7032eca2b109892569d))
+
 ## [1.17.0](https://github.com/sequra/sequra-style/compare/v1.16.0...v1.17.0) (2026-07-20)
 
 
