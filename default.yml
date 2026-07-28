@@ -857,3 +857,14 @@ Sequra/NoSidekiqPerformStubs:
     - "**/*_spec.rb"
     - "**/spec/support/**/*.rb"
     - "**/spec/shared_examples/**/*.rb"
+
+# Catch malformed labels on prometheus_exporter metric calls. `increment`,
+# `decrement` and `observe` take labels as a positional hash, so a `labels:`
+# keyword silently produces a series labelled `labels="{...}"` that no
+# by-label query can match. Also catches the value/labels argument order,
+# which is reversed between `observe` and `increment`. Autocorrectable.
+# `warning` severity: these are silently broken metrics, not style, so they
+# fail the build rather than waiting for adoption.
+Sequra/PrometheusMetricLabels:
+  Enabled: true
+  Severity: warning
