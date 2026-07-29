@@ -143,6 +143,54 @@ RSpec.describe RuboCop::Cop::Sequra::NoSidekiqPerformStubs, :config do
     end
   end
 
+  context "with mailer `.later` enqueue stubs" do
+    it "flags `allow(SomeMailer).to receive(:later)`" do
+      expect_offense(<<~RUBY)
+        allow(WelcomeMailer).to receive(:later)
+                                ^^^^^^^^^^^^^^^ #{described_class::MSG}
+      RUBY
+    end
+
+    it "flags namespaced mailer constants" do
+      expect_offense(<<~RUBY)
+        allow(AffiliateNetwork::Prime::IntegrationDocumentationMailer).to receive(:later)
+                                                                          ^^^^^^^^^^^^^^^ #{described_class::MSG}
+      RUBY
+    end
+
+    it "flags `.later` with chained `.with(args)`" do
+      expect_offense(<<~RUBY)
+        expect(WelcomeMailer).to have_received(:later).with(:welcome, user)
+                                 ^^^^^^^^^^^^^^^^^^^^^ #{described_class::MSG}
+      RUBY
+    end
+
+    it "flags negative expectation on `.later`" do
+      expect_offense(<<~RUBY)
+        expect(WelcomeMailer).not_to receive(:later)
+                                     ^^^^^^^^^^^^^^^ #{described_class::MSG}
+      RUBY
+    end
+
+    it "does not flag `.later` on a non-mailer constant" do
+      expect_no_offenses(<<~RUBY)
+        allow(SomeScheduler).to receive(:later)
+      RUBY
+    end
+
+    it "does not flag `.later` on a non-constant subject" do
+      expect_no_offenses(<<~RUBY)
+        allow(scheduler).to receive(:later)
+      RUBY
+    end
+
+    it "does not flag mailer `.later` with `.and_call_original`" do
+      expect_no_offenses(<<~RUBY)
+        allow(WelcomeMailer).to receive(:later).and_call_original
+      RUBY
+    end
+  end
+
   context "with `.and_call_original` escape hatch" do
     it "does not flag `receive(:perform_async).and_call_original`" do
       expect_no_offenses(<<~RUBY)
