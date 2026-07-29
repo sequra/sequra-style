@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.19.0](https://github.com/sequra/sequra-style/compare/v1.18.0...v1.19.0) (2026-07-29)
+
+
+### Features
+
+* [COR-1992] Flag mailer .later stubs in NoSidekiqPerformStubs ([#81](https://github.com/sequra/sequra-style/issues/81)) ([b9ea46e](https://github.com/sequra/sequra-style/commit/b9ea46e97649b40aae30bfa4f6cbbc51fe0c72f0))
+
 ## [1.18.0](https://github.com/sequra/sequra-style/compare/v1.17.0...v1.18.0) (2026-07-28)
 
 
