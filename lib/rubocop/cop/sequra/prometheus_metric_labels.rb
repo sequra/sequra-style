@@ -37,6 +37,10 @@ module RuboCop
       #   # good
       #   histogram.observe(duration, { outcome: :ok })
       #
+      #   # allowed - a lone braceless hash is keyword-argument syntax, which
+      #   # `RemoteMetric#observe` does not accept, so this is a wrapper call
+      #   histogram_wrapper.observe(score: 0.87, match: true)
+      #
       #   # bad - increment takes the labels first
       #   counter.increment(1, { outcome: :bound })
       #
@@ -117,10 +121,24 @@ module RuboCop
           return if arguments.empty?
 
           if VALUE_FIRST_METHODS.include?(node.method_name)
-            add_offense(arguments.first, message: MSG_VALUE_FIRST) if arguments.first.hash_type?
+            add_offense(arguments.first, message: MSG_VALUE_FIRST) if labels_in_value_position?(arguments)
           elsif value_before_labels?(arguments)
             add_offense(node, message: format(MSG_LABELS_FIRST, method: node.method_name))
           end
+        end
+
+        # Only the unambiguous cases: the value follows the hash, or braces
+        # mark the hash as a deliberate positional argument. A lone braceless
+        # hash is keyword-argument syntax, and since `RemoteMetric#observe`
+        # takes no keywords it cannot be one of its call sites — it is how a
+        # wrapper around a metric is invoked (`histogram.observe(score:,
+        # match:)`), so flagging it hits every such wrapper rather than the
+        # mistake.
+        def labels_in_value_position?(arguments)
+          first_argument = arguments.first
+          return false unless first_argument.hash_type?
+
+          arguments.size > 1 || first_argument.braces?
         end
 
         # Only the unambiguous flip: a bare number where the labels belong,

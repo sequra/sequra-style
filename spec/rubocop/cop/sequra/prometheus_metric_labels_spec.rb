@@ -110,10 +110,10 @@ RSpec.describe RuboCop::Cop::Sequra::PrometheusMetricLabels, :config do
       RUBY
     end
 
-    it "flags a braceless hash as observe's only argument" do
+    it "flags a braced hash as observe's only argument" do
       expect_offense(<<~RUBY)
-        histogram.observe(outcome: :ok)
-                          ^^^^^^^^^^^^ #{described_class::MSG_VALUE_FIRST}
+        histogram.observe({ outcome: :ok })
+                          ^^^^^^^^^^^^^^^^ #{described_class::MSG_VALUE_FIRST}
       RUBY
     end
 
@@ -265,6 +265,30 @@ RSpec.describe RuboCop::Cop::Sequra::PrometheusMetricLabels, :config do
     it "accepts an unrelated method taking a labels keyword" do
       expect_no_offenses(<<~RUBY)
         chart.render(labels: { outcome: :bound })
+      RUBY
+    end
+
+    it "accepts a wrapper whose observe takes keyword arguments" do
+      expect_no_offenses(<<~RUBY)
+        Instrumentation::CardholderNameMatchHistogram.new.observe(
+          score: result.score,
+          match: result.match,
+          reason: result.reason
+        )
+      RUBY
+    end
+
+    it "accepts a wrapper observe call using hash shorthand" do
+      expect_no_offenses(<<~RUBY)
+        histogram_wrapper.observe(score:, match:, reason:)
+      RUBY
+    end
+
+    it "accepts a wrapper observe definition delegating positionally" do
+      expect_no_offenses(<<~RUBY)
+        def observe(score:, match:, reason:)
+          histogram.observe(score, { match:, reason: })
+        end
       RUBY
     end
   end
