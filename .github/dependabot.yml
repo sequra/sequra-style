@@ -47,6 +47,10 @@ updates:
     commit-message:
       prefix: "chore(deps)"
     labels: ["dependencies", "github-actions"]
+    # github-actions supports default-days only: the semver tiers are documented as
+    # unsupported for it, so they would be silently ignored here.
+    cooldown:
+      default-days: 7
     groups:
       github-actions-minor-patch:
         patterns: ["*"]
