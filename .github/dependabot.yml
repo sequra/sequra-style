@@ -1,0 +1,57 @@
+version: 2
+updates:
+  - package-ecosystem: "bundler"
+    directory: "/"
+    # This gem is the shared rubocop config, so its gemspec ranges decide what every
+    # seQura Ruby repo resolves. Dependabot refreshes Gemfile.lock and never rewrites
+    # them: a cop bump landing everywhere at once stays a human decision.
+    versioning-strategy: "lockfile-only"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "Europe/Madrid"
+    open-pull-requests-limit: 5
+    # PR titles are linted for conventional commits, and "chore" keeps release-please
+    # from cutting a release for a lockfile change.
+    commit-message:
+      prefix: "chore(deps)"
+      prefix-development: "chore(deps-dev)"
+    labels: ["dependencies", "ruby"]
+    # Applies to version updates only: security fixes are never held back.
+    cooldown:
+      default-days: 7
+      semver-major-days: 30
+      semver-minor-days: 7
+      semver-patch-days: 3
+    groups:
+      bundler-minor-patch:
+        dependency-type: "production"
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+      # Development dependencies never reach consumers: green CI is enough to merge.
+      bundler-dev-minor-patch:
+        dependency-type: "development"
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+    # Majors stay ungrouped so each keeps its own reviewable PR.
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "Europe/Madrid"
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: "chore(deps)"
+    labels: ["dependencies", "github-actions"]
+    # github-actions supports default-days only: the semver tiers are documented as
+    # unsupported for it, so they would be silently ignored here.
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions-minor-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
