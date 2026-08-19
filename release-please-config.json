@@ -4,8 +4,8 @@
     ".": {
       "release-type": "ruby",
       "package-name": "sequra-style",
-      "version-file": "lib/sequra/style/version.rb",
-      "changelog-path": "CHANGELOG.md"
+      "include-component-in-tag": false,
+      "version-file": "lib/sequra/style/version.rb"
     }
   }
 }

@@ -3,15 +3,25 @@ on:
   push:
     branches:
       - 'master'
+# Least privilege for the release job: contents, issues and pull-requests are what
+# release-please needs to open, label and tag the release PR. The gem is pushed to
+# rubygems.org with its own token, so no packages scope is needed here.
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      # Configuration lives in release-please-config.json: v4 of this action dropped
-      # the inline inputs, and unknown `with:` keys are only warnings, so a bumped
-      # version with stale inputs would silently stop updating version.rb.
+      # Release type, gem name and version file moved to release-please-config.json:
+      # v4 removed those inputs in favour of the manifest configuration, and unknown
+      # `with:` keys only warn, so stale inputs would silently stop bumping version.rb.
       - uses: googleapis/release-please-action@v5
         id: release
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
       - uses: actions/checkout@v2
         if: ${{ steps.release.outputs.release_created }}
       - uses: ruby/setup-ruby@v1
