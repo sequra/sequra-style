@@ -7,13 +7,11 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v5
+      # Configuration lives in release-please-config.json: v4 of this action dropped
+      # the inline inputs, and unknown `with:` keys are only warnings, so a bumped
+      # version with stale inputs would silently stop updating version.rb.
+      - uses: googleapis/release-please-action@v5
         id: release
-        with:
-          release-type: ruby
-          package-name: sequra-style
-          bump-minor-pre-major: true
-          version-file: 'lib/sequra/style/version.rb'
       - uses: actions/checkout@v2
         if: ${{ steps.release.outputs.release_created }}
       - uses: ruby/setup-ruby@v1
