@@ -3,17 +3,25 @@ on:
   push:
     branches:
       - 'master'
+# Least privilege for the release job: contents, issues and pull-requests are what
+# release-please needs to open, label and tag the release PR. The gem is pushed to
+# rubygems.org with its own token, so no packages scope is needed here.
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v3
+      # Release type, gem name and version file moved to release-please-config.json:
+      # v4 removed those inputs in favour of the manifest configuration, and unknown
+      # `with:` keys only warn, so stale inputs would silently stop bumping version.rb.
+      - uses: googleapis/release-please-action@v5
         id: release
         with:
-          release-type: ruby
-          package-name: sequra-style
-          bump-minor-pre-major: true
-          version-file: 'lib/sequra/style/version.rb'
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
       - uses: actions/checkout@v2
         if: ${{ steps.release.outputs.release_created }}
       - uses: ruby/setup-ruby@v1
