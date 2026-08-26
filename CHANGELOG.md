@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.20.0](https://github.com/sequra/sequra-style/compare/v1.19.0...v1.20.0) (2026-08-26)
+
+
+### Features
+
+* [COR-2792] add Sequra/NoHelpers cop ([#91](https://github.com/sequra/sequra-style/issues/91)) ([443db77](https://github.com/sequra/sequra-style/commit/443db77b813cee105abb3d9a4ea71d54c9c221e6))
+
 ## [1.19.0](https://github.com/sequra/sequra-style/compare/v1.18.0...v1.19.0) (2026-07-29)
 
 
