@@ -24,7 +24,7 @@ module RuboCop
       #     def label = order.reference
       #   end
       class NoHelpers < Base
-        MSG = "Do not create helper modules. Use presenters, formatters, or calculators instead."
+        MSG = "Do not create helpers. Use presenters, formatters, or calculators instead."
 
         HELPER_PATH = %r{(^|/)app/helpers/}
 
