@@ -5,6 +5,8 @@ require_relative "../lib/rubocop/cop/sequra/async_job_pattern"
 require_relative "../lib/rubocop/cop/sequra/no_helpers"
 require_relative "../lib/rubocop/cop/sequra/no_sidekiq_perform_stubs"
 require_relative "../lib/rubocop/cop/sequra/prometheus_metric_labels"
+require_relative "../lib/rubocop/cop/sequra/rspec_literal_record_id"
+require_relative "../lib/rubocop/cop/sequra/rspec_short_negative_include"
 
 RSpec.configure do |config|
   config.include(RuboCop::RSpec::ExpectOffense)
