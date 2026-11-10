@@ -869,6 +869,30 @@ Sequra/NoSidekiqPerformStubs:
     - "**/spec/support/**/*.rb"
     - "**/spec/shared_examples/**/*.rb"
 
+# Forbid a literal id on a created record in specs. Sequences are not rolled
+# back with the transaction, so another spec on the same worker can take the
+# id first and the insert fails at random (simba #24711). `build` and
+# `build_stubbed` are exempt: they never save a row. See spec-determinism.md.
+# Ships disabled so consumer repos opt in with `.rubocop_todo.yml`.
+Sequra/RSpecLiteralRecordId:
+  Enabled: false
+  Include:
+    - "**/*_spec.rb"
+    - "**/spec/support/**/*.rb"
+    - "**/spec/shared_examples/**/*.rb"
+
+# Forbid asserting that a short string of letters and digits, or an id, is
+# absent from a value. Random ids and tokens contain such strings by chance,
+# so the example fails one run in hundreds (simba #24164, #24723). Strings with
+# punctuation or spaces are exempt. See spec-determinism.md.
+# Ships disabled so consumer repos opt in with `.rubocop_todo.yml`.
+Sequra/RSpecShortNegativeInclude:
+  Enabled: false
+  Include:
+    - "**/*_spec.rb"
+    - "**/spec/support/**/*.rb"
+    - "**/spec/shared_examples/**/*.rb"
+
 # Catch malformed labels on prometheus_exporter metric calls. `increment`,
 # `decrement` and `observe` take labels as a positional hash, so a `labels:`
 # keyword silently produces a series labelled `labels="{...}"` that no
